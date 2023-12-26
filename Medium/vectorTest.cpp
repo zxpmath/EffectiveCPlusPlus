@@ -41,7 +41,7 @@ public:
         other.str = nullptr;
     }
 
-    // // Move Assignment operator
+    // Move Assignment operator
     MyString & operator = (MyString && other)
     {
         if (this != &other)
@@ -65,9 +65,10 @@ int main() {
     
     // Create a MyString object and add it to the vector
     MyString hello("Hello");
-    strings.push_back(hello);
-    hello.SetString("Modified");
-    std::cout << hello.GetString() << std::endl;
+    std::cout << "Push_back" << std::endl;
+    strings.push_back(std::move(hello));
+    //hello.SetString("Modified");
+    //std::cout << hello.GetString() << std::endl;
     
     // Print the strings stored in the vector
     for (const MyString& s : strings) {
